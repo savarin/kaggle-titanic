@@ -1,4 +1,5 @@
-# introduces GridSearchCV
+# introduces Pipeline + Imputation, may break up so
+# first only introduces Imputation, second choice mean/median to impute
 
 import pandas as pd
 import numpy as np
@@ -7,8 +8,8 @@ df = pd.read_csv('../data/titanic_train.csv')
 
 df = df.drop(['Name', 'Ticket', 'Cabin'], axis=1)
 
-age_mean = df['Age'].mean()
-df['Age'] = df['Age'].fillna(age_mean)
+#age_mean = df['Age'].mean()
+#df['Age'] = df['Age'].fillna(age_mean)
 
 from scipy.stats import mode
 mode_embarked = mode(df['Embarked'])[0][0]
@@ -26,23 +27,37 @@ cols = [cols[1]] + cols[0:1] + cols[2:]
 
 df = df[cols]
 
+# Because of the following bug we cannot use NaN as the missing
+# value marker, use a negative value as marker instead:
+# https://github.com/scikit-learn/scikit-learn/issues/3044
+
+# fill NA values in Age with -1
+df = df.fillna(-1)
+
 
 train_data = df.values
 
 
+
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import Imputer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.grid_search import GridSearchCV
 
+imputer = Imputer(strategy='mean', missing_values=-1)
+
+classifier = RandomForestClassifier(n_estimators=100)
+
+pipeline = Pipeline([
+    ('imp', imputer),
+    ('clf', classifier),
+])
+
 parameter_grid = {
-    'max_features': [0.5, 1.],
-    'max_depth': [5., None]
+    'imp__strategy': ['mean', 'median'],
+    'clf__max_features': [0.5, 1],
+    'clf__max_depth': [5, None],
 }
-
-grid_search = GridSearchCV(RandomForestClassifier(n_estimators = 100), parameter_grid,
-                            cv=5, verbose=3)
-
-grid_search.fit(train_data[0::,1::], train_data[0::,0])
-
 
 
 
@@ -61,7 +76,7 @@ model = model.fit(train_data[0::,1::],train_data[0::,0])
 
 
 
-df_test = pd.read_csv('../datasets/titanic_test.csv')
+df_test = pd.read_csv('../data/titanic_test.csv')
 
 df_test.info()
 
@@ -93,7 +108,7 @@ output = model.predict(test_data)
 result = np.c_[test_data[:,0].astype(int), output.astype(int)]
 
 df_result = pd.DataFrame(result[:,0:2], columns=['PassengerId', 'Survived'])
-df_result.to_csv('../results/titanic_1-3.csv', index=False)
+df_result.to_csv('../results/titanic_1-4.csv', index=False)
 
 
 

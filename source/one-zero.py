@@ -10,12 +10,12 @@ df = pd.read_csv('../data/titanic_train.csv')
 # review first ten rows
 df.head(10)
 
+# drop columns Ticket and Cabin
+df = df.drop(['Name', 'Ticket', 'Cabin'], axis=1)
+
 # identify columns to process
 df.info()
 
-
-# drop columns Ticket and Cabin
-df = df.drop(['Name', 'Ticket', 'Cabin'], axis=1)
 
 # drop NA values
 df = df.dropna()
@@ -35,7 +35,7 @@ df = df.drop(['Sex', 'Embarked'], axis=1)
 # relabel columns such that Survived at start
 
 cols = df.columns.tolist()
-cols = cols[1:2] + cols[0:1] + cols[2:]
+cols = [cols[1]] + cols[0:1] + cols[2:]
 
 df = df[cols]
 
@@ -50,12 +50,12 @@ df.info()
 train_data = df.values
 
 
-# apply SVM model
+# apply RF model
 
-from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
 
-model = SVC(kernel='linear')
-model = model.fit(train_data[0::,1::], train_data[0::,0])
+model = RandomForestClassifier(n_estimators = 100)
+model = model.fit(train_data[0::,1::],train_data[0::,0])
 
 
 # apply to test data, similar cleaning method
@@ -83,7 +83,7 @@ result = np.c_[test_data[:,0].astype(int), output.astype(int)]
 # print to output file
 df_result = pd.DataFrame(result[:,0:2], columns=['PassengerId', 'Survived'])
 
-df_result.to_csv('../results/titanic_one.csv', index=False)
+df_result.to_csv('../results/titanic_-0.csv', index=False)
 
 # problem - output smaller than required for submission
 df_result.shape
