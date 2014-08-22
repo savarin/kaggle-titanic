@@ -27,45 +27,29 @@ file.
 ## Static Viewing
 
 The notebooks can be viewed in a static fashion using the [nbviewer](http://nbviewer.ipython.org)
-site, as per the links below. However, we recommend reviewing them interactively with the
-IPython Notebook.
+site, as per the links in the sectionbelow. However, we recommend reviewing them
+interactively with the IPython Notebook.
+
+
+## Presentation Format
+
+The tutorial will cover data manipulation using pandas - loading data, and cleaning data. 
+We'll then use scikit-learn to make predictions. By the end of the session, we would have
+worked on the Kaggle Titanic competition [Kaggle Titanic competition](https://www.kaggle.com/c/titanic-gettingStarted)
+from start to finish, through a number of iterations of increasing sophistication.
 - [Section 1-0 - First Cut.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Section%201-0%20-%20First%20Cut.ipynb)
-- [Section 1-1 - Filling-in Missing Values.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/00_Preliminaries.ipynb)
-- [Section 1-2 - Creating Dummy Variables.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/00_Preliminaries.ipynb)
-- [Section 1-3 - Parameter Tuning.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/00_Preliminaries.ipynb)
-- [Section 1-4 - Building Pipelines.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/00_Preliminaries.ipynb)
-- [Section 1-5 - Final Checks.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/00_Preliminaries.ipynb)
-- [Section 2-1 - Support Vector Machines.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/00_Preliminaries.ipynb)
-- [Section 2-2 - SVM with Parameter Tuning.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/00_Preliminaries.ipynb)
+- [Section 1-1 - Filling-in Missing Values.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Section%201-1%20-%20Filling-in%20Missing%20Values.ipynb)
+- [Section 1-2 - Creating Dummy Variables.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Section%201-2%20-%20Creating%20Dummy%20Variables.ipynb)
+- [Section 1-3 - Parameter Tuning.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Section%201-3%20-%20Parameter%20Tuning.ipynb)
+
+Time-permitting, we would cover the following materials.
+- [Section 1-4 - Building Pipelines.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Section%201-4%20-%20Building%20Pipelines.ipynb)
+- [Section 1-5 - Final Checks.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Section%201-5%20-%20Final%20Checks.ipynb)
+- [Section 2-1 - Support Vector Machines.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Section%202-1%20-%20Support%20Vector%20Machines.ipynb)
+- [Section 2-2 - SVM with Parameter Tuning.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Section%202-2%20-%20SVM%20with%20Parameter%20Tuning.ipynb)
+- [Appendix A - Cross-Validation.ipynb](http://nbviewer.ipython.org/github/datapress/kaggle-titanic/blob/master/notebooks/Appendix%20A%20-%20Cross-validation.ipynb)
+
+A [Kaggle account](https://www.kaggle.com/account/register) would be required for the
+purposes of making submissions and reviewing the performance of the model on the leaderboard.
 
 
-
-- [01_basics.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/01_basics.ipynb)
-- [02_data_representation.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/02_data_representation.ipynb)
-- [03_basic_principles.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/03_basic_principles.ipynb)
-- [04_supervised_in_depth.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/04_supervised_in_depth.ipynb)
-- [05_unsupervised_in_depth.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/05_unsupervised_in_depth.ipynb)
-- [06_validation.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/06_validation.ipynb)
-
-
-
-
-## Notebook Listing
-These notebooks in this repository can be statically viewed using the
-excellent [NBViewer](http://nbviewer.ipython.org) site.  They will not
-be able to be modified within nbviewer.  To modify them, first download
-the tutorial repository, change to the notebooks directory, and type
-``ipython notebook``.  You should see the list in the ipython notebook
-launch page in your web browser.
-
-- [00_Preliminaries.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/00_Preliminaries.ipynb)
-- [01_basics.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/01_basics.ipynb)
-- [02_data_representation.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/02_data_representation.ipynb)
-- [03_basic_principles.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/03_basic_principles.ipynb)
-- [04_supervised_in_depth.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/04_supervised_in_depth.ipynb)
-- [05_unsupervised_in_depth.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/05_unsupervised_in_depth.ipynb)
-- [06_validation.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/sklearn_pycon2014/master/notebooks/06_validation.ipynb)
-
-Note that some of the code in these notebooks will not work outside the
-directory structure of this tutorial, so it is important to clone the full
-repository if possible.
